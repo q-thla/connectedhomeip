@@ -402,7 +402,7 @@ function asChipZapType(type)
       case 'uint64_t':
         return basicType;
       default:
-        return type + '::Type'
+        return "Structs::" + type + '::Type'
       }
     })
   }

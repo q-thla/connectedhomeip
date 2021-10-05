@@ -64,6 +64,7 @@ namespace ApplianceControl {
 }
 
 namespace Descriptor {
+namespace Structs {
 namespace DeviceType {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -100,6 +101,7 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace DeviceType
+} // namespace Structs
 } // namespace Descriptor
 
 namespace PollControl {
@@ -118,6 +120,7 @@ namespace PowerSource {
 }
 
 namespace GeneralCommissioning {
+namespace Structs {
 namespace BasicCommissioningInfoType {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -150,9 +153,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace BasicCommissioningInfoType
+} // namespace Structs
 } // namespace GeneralCommissioning
 
 namespace NetworkCommissioning {
+namespace Structs {
 namespace ThreadInterfaceScanResult {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -233,12 +238,14 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace WiFiInterfaceScanResult
+} // namespace Structs
 } // namespace NetworkCommissioning
 
 namespace DiagnosticLogs {
 }
 
 namespace GeneralDiagnostics {
+namespace Structs {
 namespace NetworkInterfaceType {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -295,9 +302,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace NetworkInterfaceType
+} // namespace Structs
 } // namespace GeneralDiagnostics
 
 namespace SoftwareDiagnostics {
+namespace Structs {
 namespace ThreadMetrics {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -346,9 +355,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace ThreadMetrics
+} // namespace Structs
 } // namespace SoftwareDiagnostics
 
 namespace ThreadNetworkDiagnostics {
+namespace Structs {
 namespace NeighborTable {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -613,6 +624,7 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace SecurityPolicy
+} // namespace Structs
 } // namespace ThreadNetworkDiagnostics
 
 namespace WiFiNetworkDiagnostics {
@@ -631,6 +643,7 @@ namespace AdministratorCommissioning {
 }
 
 namespace OperationalCredentials {
+namespace Structs {
 namespace FabricDescriptor {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -719,9 +732,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace NOCStruct
+} // namespace Structs
 } // namespace OperationalCredentials
 
 namespace FixedLabel {
+namespace Structs {
 namespace LabelStruct {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -758,6 +773,7 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace LabelStruct
+} // namespace Structs
 } // namespace FixedLabel
 
 namespace ShadeConfiguration {
@@ -917,6 +933,7 @@ namespace WakeOnLan {
 }
 
 namespace TvChannel {
+namespace Structs {
 namespace TvChannelInfo {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1011,9 +1028,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace TvChannelLineupInfo
+} // namespace Structs
 } // namespace TvChannel
 
 namespace TargetNavigator {
+namespace Structs {
 namespace NavigateTargetTargetInfo {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1050,9 +1069,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace NavigateTargetTargetInfo
+} // namespace Structs
 } // namespace TargetNavigator
 
 namespace MediaPlayback {
+namespace Structs {
 namespace MediaPlaybackPosition {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1089,9 +1110,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace MediaPlaybackPosition
+} // namespace Structs
 } // namespace MediaPlayback
 
 namespace MediaInput {
+namespace Structs {
 namespace MediaInputInfo {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1138,6 +1161,7 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace MediaInputInfo
+} // namespace Structs
 } // namespace MediaInput
 
 namespace LowPower {
@@ -1147,6 +1171,7 @@ namespace KeypadInput {
 }
 
 namespace ContentLauncher {
+namespace Structs {
 namespace ContentLaunchAdditionalInfo {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1394,9 +1419,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace ContentLaunchStyleInformation
+} // namespace Structs
 } // namespace ContentLauncher
 
 namespace AudioOutput {
+namespace Structs {
 namespace AudioOutputInfo {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1439,9 +1466,11 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace AudioOutputInfo
+} // namespace Structs
 } // namespace AudioOutput
 
 namespace ApplicationLauncher {
+namespace Structs {
 namespace ApplicationLauncherApp {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1478,6 +1507,7 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace ApplicationLauncherApp
+} // namespace Structs
 } // namespace ApplicationLauncher
 
 namespace ApplicationBasic {
@@ -1487,6 +1517,7 @@ namespace AccountLogin {
 }
 
 namespace TestCluster {
+namespace Structs {
 namespace SimpleStruct {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1770,6 +1801,7 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace TestListStructOctet
+} // namespace Structs
 } // namespace TestCluster
 
 namespace Messaging {
@@ -1794,6 +1826,7 @@ namespace Binding {
 }
 
 namespace GroupKeyManagement {
+namespace Structs {
 namespace GroupKey {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & writer, uint64_t tag) const
 {
@@ -1884,6 +1917,7 @@ CHIP_ERROR Type::Decode(TLV::TLVReader & reader)
     return CHIP_NO_ERROR;
 }
 } // namespace GroupState
+} // namespace Structs
 } // namespace GroupKeyManagement
 
 namespace SampleMfgSpecificCluster {
