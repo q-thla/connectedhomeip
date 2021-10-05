@@ -90,18 +90,18 @@ namespace Descriptor {
 
     namespace Structs {
         namespace DeviceType {
-            enum FieldId 
+            enum FieldId
             {
                 kTypeFieldId = 0,
                 kRevisionFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint32_t type;
                 uint16_t revision;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -168,16 +168,16 @@ namespace GeneralCommissioning {
 
     namespace Structs {
         namespace BasicCommissioningInfoType {
-            enum FieldId 
+            enum FieldId
             {
                 kFailSafeExpiryLengthMsFieldId = 0,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint32_t failSafeExpiryLengthMs;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -212,23 +212,23 @@ namespace NetworkCommissioning {
 
     namespace Structs {
         namespace ThreadInterfaceScanResult {
-            enum FieldId 
+            enum FieldId
             {
                 kDiscoveryResponseFieldId = 0,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 chip::ByteSpan discoveryResponse;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace ThreadInterfaceScanResult
 
         namespace WiFiInterfaceScanResult {
-            enum FieldId 
+            enum FieldId
             {
                 kSecurityFieldId = 0,
                 kSsidFieldId = 1,
@@ -236,8 +236,8 @@ namespace NetworkCommissioning {
                 kChannelFieldId = 3,
                 kFrequencyBandFieldId = 4,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t security;
@@ -245,7 +245,7 @@ namespace NetworkCommissioning {
                 chip::ByteSpan bssid;
                 uint8_t channel;
                 uint32_t frequencyBand;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -334,7 +334,7 @@ namespace GeneralDiagnostics {
 
     namespace Structs {
         namespace NetworkInterfaceType {
-            enum FieldId 
+            enum FieldId
             {
                 kNameFieldId = 0,
                 kFabricConnectedFieldId = 1,
@@ -343,8 +343,8 @@ namespace GeneralDiagnostics {
                 kHardwareAddressFieldId = 4,
                 kTypeFieldId = 5,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 chip::ByteSpan name;
@@ -353,7 +353,7 @@ namespace GeneralDiagnostics {
                 bool offPremiseServicesReachableIPv6;
                 chip::ByteSpan hardwareAddress;
                 InterfaceType type;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -365,7 +365,7 @@ namespace SoftwareDiagnostics {
 
     namespace Structs {
         namespace ThreadMetrics {
-            enum FieldId 
+            enum FieldId
             {
                 kIdFieldId = 0,
                 kNameFieldId = 1,
@@ -373,8 +373,8 @@ namespace SoftwareDiagnostics {
                 kStackFreeMinimumFieldId = 3,
                 kStackSizeFieldId = 4,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint64_t id;
@@ -382,7 +382,7 @@ namespace SoftwareDiagnostics {
                 uint32_t stackFreeCurrent;
                 uint32_t stackFreeMinimum;
                 uint32_t stackSize;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -412,7 +412,7 @@ namespace ThreadNetworkDiagnostics {
 
     namespace Structs {
         namespace NeighborTable {
-            enum FieldId 
+            enum FieldId
             {
                 kExtAddressFieldId = 0,
                 kAgeFieldId = 1,
@@ -429,8 +429,8 @@ namespace ThreadNetworkDiagnostics {
                 kFullNetworkDataFieldId = 12,
                 kIsChildFieldId = 13,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint64_t extAddress;
@@ -447,14 +447,14 @@ namespace ThreadNetworkDiagnostics {
                 bool fullThreadDevice;
                 bool fullNetworkData;
                 bool isChild;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace NeighborTable
 
         namespace OperationalDatasetComponents {
-            enum FieldId 
+            enum FieldId
             {
                 kActiveTimestampPresentFieldId = 0,
                 kPendingTimestampPresentFieldId = 1,
@@ -469,8 +469,8 @@ namespace ThreadNetworkDiagnostics {
                 kSecurityPolicyPresentFieldId = 10,
                 kChannelMaskPresentFieldId = 11,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 bool activeTimestampPresent;
@@ -485,14 +485,14 @@ namespace ThreadNetworkDiagnostics {
                 bool pskcPresent;
                 bool securityPolicyPresent;
                 bool channelMaskPresent;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace OperationalDatasetComponents
 
         namespace RouteTable {
-            enum FieldId 
+            enum FieldId
             {
                 kExtAddressFieldId = 0,
                 kRloc16FieldId = 1,
@@ -505,8 +505,8 @@ namespace ThreadNetworkDiagnostics {
                 kAllocatedFieldId = 8,
                 kLinkEstablishedFieldId = 9,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint64_t extAddress;
@@ -519,25 +519,25 @@ namespace ThreadNetworkDiagnostics {
                 uint8_t age;
                 bool allocated;
                 bool linkEstablished;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace RouteTable
 
         namespace SecurityPolicy {
-            enum FieldId 
+            enum FieldId
             {
                 kRotationTimeFieldId = 0,
                 kFlagsFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint16_t rotationTime;
                 uint16_t flags;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -615,7 +615,7 @@ namespace OperationalCredentials {
 
     namespace Structs {
         namespace FabricDescriptor {
-            enum FieldId 
+            enum FieldId
             {
                 kFabricIndexFieldId = 0,
                 kRootPublicKeyFieldId = 1,
@@ -624,8 +624,8 @@ namespace OperationalCredentials {
                 kNodeIdFieldId = 4,
                 kLabelFieldId = 5,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t fabricIndex;
@@ -634,25 +634,25 @@ namespace OperationalCredentials {
                 uint64_t fabricId;
                 uint64_t nodeId;
                 chip::ByteSpan label;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace FabricDescriptor
 
         namespace NOCStruct {
-            enum FieldId 
+            enum FieldId
             {
                 kFabricIndexFieldId = 0,
                 kNocFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t fabricIndex;
                 chip::ByteSpan noc;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -664,18 +664,18 @@ namespace FixedLabel {
 
     namespace Structs {
         namespace LabelStruct {
-            enum FieldId 
+            enum FieldId
             {
                 kLabelFieldId = 0,
                 kValueFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 chip::ByteSpan label;
                 chip::ByteSpan value;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -913,7 +913,7 @@ namespace TvChannel {
 
     namespace Structs {
         namespace TvChannelInfo {
-            enum FieldId 
+            enum FieldId
             {
                 kMajorNumberFieldId = 0,
                 kMinorNumberFieldId = 1,
@@ -921,8 +921,8 @@ namespace TvChannel {
                 kCallSignFieldId = 3,
                 kAffiliateCallSignFieldId = 4,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint16_t majorNumber;
@@ -930,29 +930,29 @@ namespace TvChannel {
                 chip::ByteSpan name;
                 chip::ByteSpan callSign;
                 chip::ByteSpan affiliateCallSign;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace TvChannelInfo
 
         namespace TvChannelLineupInfo {
-            enum FieldId 
+            enum FieldId
             {
                 kOperatorNameFieldId = 0,
                 kLineupNameFieldId = 1,
                 kPostalCodeFieldId = 2,
                 kLineupInfoTypeFieldId = 3,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 Span<const char> operatorName;
                 Span<const char> lineupName;
                 Span<const char> postalCode;
                 TvChannelLineupInfoType lineupInfoType;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -970,18 +970,18 @@ namespace TargetNavigator {
 
     namespace Structs {
         namespace NavigateTargetTargetInfo {
-            enum FieldId 
+            enum FieldId
             {
                 kIdentifierFieldId = 0,
                 kNameFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t identifier;
                 chip::ByteSpan name;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -1010,18 +1010,18 @@ namespace MediaPlayback {
 
     namespace Structs {
         namespace MediaPlaybackPosition {
-            enum FieldId 
+            enum FieldId
             {
                 kUpdatedAtFieldId = 0,
                 kPositionFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint64_t updatedAt;
                 uint64_t position;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -1048,22 +1048,22 @@ namespace MediaInput {
 
     namespace Structs {
         namespace MediaInputInfo {
-            enum FieldId 
+            enum FieldId
             {
                 kIndexFieldId = 0,
                 kInputTypeFieldId = 1,
                 kNameFieldId = 2,
                 kDescriptionFieldId = 3,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t index;
                 MediaInputType inputType;
                 chip::ByteSpan name;
                 chip::ByteSpan description;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -1210,42 +1210,42 @@ namespace ContentLauncher {
 
     namespace Structs {
         namespace ContentLaunchAdditionalInfo {
-            enum FieldId 
+            enum FieldId
             {
                 kNameFieldId = 0,
                 kValueFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 Span<const char> name;
                 Span<const char> value;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace ContentLaunchAdditionalInfo
 
         namespace ContentLaunchParamater {
-            enum FieldId 
+            enum FieldId
             {
                 kTypeFieldId = 0,
                 kValueFieldId = 1,
                 kExternalIDListFieldId = 2,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 ContentLaunchParameterEnum type;
                 Span<const char> value;
                 DataModel::List<Structs::ContentLaunchAdditionalInfo::Type> externalIDList;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
-        
+
             struct DecodableType {
             public:
                 ContentLaunchParameterEnum type;
@@ -1258,7 +1258,7 @@ namespace ContentLauncher {
         } // namespace ContentLaunchParamater
 
         namespace ContentLaunchBrandingInformation {
-            enum FieldId 
+            enum FieldId
             {
                 kProviderNameFieldId = 0,
                 kBackgroundFieldId = 1,
@@ -1267,8 +1267,8 @@ namespace ContentLauncher {
                 kSplashFieldId = 4,
                 kWaterMarkFieldId = 5,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 Span<const char> providerName;
@@ -1277,47 +1277,47 @@ namespace ContentLauncher {
                 uint8_t progressBar;
                 uint8_t splash;
                 uint8_t waterMark;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace ContentLaunchBrandingInformation
 
         namespace ContentLaunchDimension {
-            enum FieldId 
+            enum FieldId
             {
                 kWidthFieldId = 0,
                 kHeightFieldId = 1,
                 kMetricFieldId = 2,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 Span<const char> width;
                 Span<const char> height;
                 ContentLaunchMetricType metric;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace ContentLaunchDimension
 
         namespace ContentLaunchStyleInformation {
-            enum FieldId 
+            enum FieldId
             {
                 kImageUrlFieldId = 0,
                 kColorFieldId = 1,
                 kSizeFieldId = 2,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 Span<const char> imageUrl;
                 Span<const char> color;
                 uint8_t size;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -1338,20 +1338,20 @@ namespace AudioOutput {
 
     namespace Structs {
         namespace AudioOutputInfo {
-            enum FieldId 
+            enum FieldId
             {
                 kIndexFieldId = 0,
                 kOutputTypeFieldId = 1,
                 kNameFieldId = 2,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t index;
                 AudioOutputType outputType;
                 chip::ByteSpan name;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -1369,18 +1369,18 @@ namespace ApplicationLauncher {
 
     namespace Structs {
         namespace ApplicationLauncherApp {
-            enum FieldId 
+            enum FieldId
             {
                 kCatalogVendorIdFieldId = 0,
                 kApplicationIdFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint16_t catalogVendorId;
                 Span<const char> applicationId;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -1412,7 +1412,7 @@ namespace TestCluster {
 
     namespace Structs {
         namespace SimpleStruct {
-            enum FieldId 
+            enum FieldId
             {
                 kAFieldId = 0,
                 kBFieldId = 1,
@@ -1420,8 +1420,8 @@ namespace TestCluster {
                 kDFieldId = 3,
                 kEFieldId = 4,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t a;
@@ -1429,34 +1429,34 @@ namespace TestCluster {
                 SimpleEnum c;
                 chip::ByteSpan d;
                 Span<const char> e;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace SimpleStruct
 
         namespace NestedStruct {
-            enum FieldId 
+            enum FieldId
             {
                 kAFieldId = 0,
                 kBFieldId = 1,
                 kCFieldId = 2,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t a;
                 bool b;
                 Structs::SimpleStruct::Type c;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace NestedStruct
 
         namespace NestedStructList {
-            enum FieldId 
+            enum FieldId
             {
                 kAFieldId = 0,
                 kBFieldId = 1,
@@ -1466,8 +1466,8 @@ namespace TestCluster {
                 kFFieldId = 5,
                 kGFieldId = 6,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint8_t a;
@@ -1477,11 +1477,11 @@ namespace TestCluster {
                 DataModel::List<uint32_t> e;
                 DataModel::List<chip::ByteSpan> f;
                 DataModel::List<uint8_t> g;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
-        
+
             struct DecodableType {
             public:
                 uint8_t a;
@@ -1498,20 +1498,20 @@ namespace TestCluster {
         } // namespace NestedStructList
 
         namespace DoubleNestedStructList {
-            enum FieldId 
+            enum FieldId
             {
                 kAFieldId = 0,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 DataModel::List<Structs::NestedStructList::Type> a;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
-        
+
             struct DecodableType {
             public:
                 DataModel::DecodableList<Structs::NestedStructList::DecodableType> a;
@@ -1522,18 +1522,18 @@ namespace TestCluster {
         } // namespace DoubleNestedStructList
 
         namespace TestListStructOctet {
-            enum FieldId 
+            enum FieldId
             {
                 kFabricIndexFieldId = 0,
                 kOperationalCertFieldId = 1,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint64_t fabricIndex;
                 chip::ByteSpan operationalCert;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
@@ -1683,7 +1683,7 @@ namespace GroupKeyManagement {
 
     namespace Structs {
         namespace GroupKey {
-            enum FieldId 
+            enum FieldId
             {
                 kVendorIdFieldId = 0,
                 kGroupKeyIndexFieldId = 1,
@@ -1691,8 +1691,8 @@ namespace GroupKeyManagement {
                 kGroupKeyEpochStartTimeFieldId = 3,
                 kGroupKeySecurityPolicyFieldId = 4,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint16_t vendorId;
@@ -1700,27 +1700,27 @@ namespace GroupKeyManagement {
                 chip::ByteSpan groupKeyRoot;
                 uint64_t groupKeyEpochStartTime;
                 GroupKeySecurityPolicy groupKeySecurityPolicy;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
         } // namespace GroupKey
 
         namespace GroupState {
-            enum FieldId 
+            enum FieldId
             {
                 kVendorIdFieldId = 0,
                 kVendorGroupIdFieldId = 1,
                 kGroupKeySetIndexFieldId = 2,
             };
-        
-            struct Type 
+
+            struct Type
             {
             public:
                 uint16_t vendorId;
                 uint16_t vendorGroupId;
                 uint16_t groupKeySetIndex;
-        
+
                 CHIP_ERROR Encode(TLV::TLVWriter &writer, uint64_t tag) const;
                 CHIP_ERROR Decode(TLV::TLVReader &reader);
             };
