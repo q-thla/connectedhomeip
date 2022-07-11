@@ -1,6 +1,6 @@
 variables:
   qvCHIP_BRANCH: sve_2_10_3_1_cand
-  GITLAB_SUBMODULE_STRATEGY: recursive
+  GIT_SUBMODULE_STRATEGY: recursive
 
 stages:
   - build
