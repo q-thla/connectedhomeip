@@ -1,6 +1,8 @@
 variables:
   qvCHIP_BRANCH: sve_2_10_3_1_cand
   GIT_SUBMODULE_STRATEGY: recursive
+  GIT_CLONE_PATH: $CI_BUILDS_DIR/$CI_RUNNER_ID/$CI_CONCURRENT_ID/$CI_PROJECT_NAME
+ 
 
 stages:
   - build
