@@ -51,7 +51,7 @@
 	branch  = master
 [submodule "qpg_sdk"]
 	path = third_party/qpg_sdk/repo
-	url = https://github.com/Qorvo/qpg-connectedhomeip
+	url = itgitlab@itgitlab.corp.qorvo.com:wcon/lps_sw/P345_QMatter.git
 	branch  = master
 	platforms = qpg
 [submodule "zap"]

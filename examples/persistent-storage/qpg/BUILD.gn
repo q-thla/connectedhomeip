@@ -57,7 +57,7 @@ qpg_executable("persistent_storage_app") {
 
   output_dir = root_out_dir
 
-  ldscript = "${qpg_sdk_root}/Libraries/Qorvo/QorvoStack/gen/QorvoStack_${qpg_target_ic}/QorvoStack_${qpg_target_ic}.ld"
+  ldscript = "${qpg_sdk_root}/Libraries/Qorvo/QorvoStack/gen/QorvoStack_${qpg_target_ic}_mrom/QorvoStack_${qpg_target_ic}_mrom.ld"
 
   inputs = [ ldscript ]
 
