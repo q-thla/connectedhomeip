@@ -52,7 +52,7 @@
 [submodule "qpg_sdk"]
 	path = third_party/qpg_sdk/repo
 	url = https://github.com/Qorvo/QMatter
-	branch  = vlatest-libs
+	branch  = SDP011-1635
 	platforms = qpg
 [submodule "freertos"]
 	path = third_party/freertos/repo
